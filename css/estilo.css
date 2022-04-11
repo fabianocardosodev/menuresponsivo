@@ -34,6 +34,7 @@ body {
 .header {
     background-color: var(--color-dark2);
     box-shadow: var(--color-dark1);
+    padding: 0 10%;
     height: 180px;
     justify-content: space-between;
     padding: 0 10%;
@@ -48,6 +49,7 @@ body {
 
 .navigation_header {
     gap: 3em;
+    z-index: 2;
 }
 
 .active {
@@ -72,6 +74,7 @@ body {
     border: none;
     color: var(--color-white);
     cursor: pointer;
+    display: none;
 }
 
 @media screen and(max-width: 768px) {
@@ -80,9 +83,14 @@ body {
     }
     .navigation_header {
         position: absolute;
-        flex-direction: column;
+        flex-direction: column !important;
         top: 0;
         background-color: var(--color-dark5);
+        height: 100%;
+        width: 35vw;
+        padding: 1em;
+        animation-duration: 1s;
+        margin-left: -100vw;
     }
 }
 
@@ -101,4 +109,13 @@ figure {
     margin-right: 30px;
     vertical-align: middle;
     width: 65px;
+}
+
+@keyframes showSidebar {
+    from {
+        margin-left: -100vw;
+    }
+    top {
+        margin-left: -10vw;
+    }
 }
